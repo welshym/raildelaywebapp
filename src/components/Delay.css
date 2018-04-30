@@ -1,0 +1,22 @@
+.delay {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #bbb;
+  background-color: #eee;
+}
+
+.delay-details {
+  display: inline-block;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #333;
+}
+
+.delay-minutes {
+  display: inline-block;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #333;
+}

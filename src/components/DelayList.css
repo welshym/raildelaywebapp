@@ -1,0 +1,10 @@
+.delayList {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #bbb;
+  background-color: #b4b4b4;
+}
+
+.delay-title {
+  font-size: 1.5em;
+}
