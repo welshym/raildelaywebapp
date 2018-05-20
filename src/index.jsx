@@ -1,6 +1,6 @@
 import 'babel-core/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Application from './app';
+import AppRoutes from './AppRoutes';
 
-ReactDOM.render(<Application />, document.getElementById('app'));
+ReactDOM.render(<AppRoutes />, document.getElementById('app'));
