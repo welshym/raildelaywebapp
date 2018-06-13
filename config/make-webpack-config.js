@@ -39,10 +39,10 @@ module.exports = function (options) {
     },
     resolve: {
       alias: {
-        'react': require.resolve('react'),
-        'react-dom': require.resolve('react/lib/ReactDOM'),
-        'react-addons-test-utils': require.resolve('react/lib/ReactTestUtils'),
-        'react-router': require.resolve('jayphelps-react-router')
+//        'react': require.resolve('react'),
+//        'react-dom': require.resolve('react/lib/ReactDOM'),
+//        'react-addons-test-utils': require.resolve('react/lib/ReactTestUtils'),
+//        'react-router': require.resolve('jayphelps-react-router')
       },
       extensions: ['', '.js', '.jsx', '.json'],
     },
@@ -53,7 +53,7 @@ module.exports = function (options) {
       }),
       new webpack.PrefetchPlugin('jquery'),
       new webpack.PrefetchPlugin('react'),
-      new webpack.PrefetchPlugin('jayphelps-react-router'),
+//      new webpack.PrefetchPlugin('jayphelps-react-router'),
       new webpack.PrefetchPlugin('react-css-modules'),
       new webpack.ResolverPlugin([
         new ComponentResolverPlugin(['jsx', 'js', 'less', 'css'])
