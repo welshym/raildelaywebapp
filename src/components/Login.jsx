@@ -25,6 +25,7 @@ class Login extends Component {
       error: false,
       errorText: ''
     };
+
     this._onChange = this._onChange.bind(this);
     this.handleSubmitClick = this.handleSubmitClick.bind(this);
   }
@@ -38,12 +39,7 @@ class Login extends Component {
   }
 
   _onChange() {
-    console.log('authData: ', authData);
     let authData = AuthStore.getAuthData();
-    console.log('authData: ', authData);
-    if (authData.loggedIn) {
-      this.setState({ redirectToReferrer: false });
-    };
 
     this.setState({ loading: false, error: authData.error });
     if (authData.error) {
@@ -51,6 +47,10 @@ class Login extends Component {
     } else {
       this.setState({ errorText: '' });
     }
+
+    if (authData.loggedIn) {
+      this.setState({ redirectToReferrer: true });
+    };
   }
 
   handleSubmitClick(event) {
@@ -65,6 +65,7 @@ class Login extends Component {
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
     const { redirectToReferrer, loading } = this.state;
+    let authenticated = this.props.authenticated;
 
     if (loading) {
       return (
@@ -73,7 +74,7 @@ class Login extends Component {
         </div>);
     }
 
-    if (redirectToReferrer) {
+    if ((redirectToReferrer) || (authenticated)) {
       return <Redirect to={from} />;
     }
 
@@ -116,14 +117,16 @@ const styleForgottenRegister = {
 
 Login.propTypes = {
   location: PropTypes.shape({
-    state: PropTypes.object.isRequired,
+    state: PropTypes.object,
   }),
+  authenticated: PropTypes.bool
 };
 
 Login.defaultProps = {
   location: {
     state: '',
   },
+  authenticated: false
 };
 
 export default Login;

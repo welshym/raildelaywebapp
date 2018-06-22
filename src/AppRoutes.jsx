@@ -34,6 +34,7 @@ class AppRoutes extends Component {
   }
 
   render() {
+    console.log('AppRoutes authenticated: ', this.state.authenticated);
     return (
       <Router>
         <div>
@@ -45,7 +46,7 @@ class AppRoutes extends Component {
           </div>
           <Switch>
             <PrivateRoute exact path="/" component={Application} authenticated={this.state.authenticated}/>
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={Login} authenticated={this.state.authenticated}/>
             <Route path="/registerreset" component={ForgottenRegister} />
           </Switch>
         </div>

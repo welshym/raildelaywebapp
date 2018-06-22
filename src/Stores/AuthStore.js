@@ -4,7 +4,7 @@ import AuthConstants from '../Constants/AuthConstants';
 import _ from 'underscore';
 
 // Define initial data
-let _authData = {};
+let _authData = { loggedIn: false, error: false, token: '' };
 
 // Method to load authorization data from API
 function loadAuthData(data) {
@@ -17,6 +17,7 @@ let AuthStore = _.extend({}, EventEmitter.prototype, {
 
   // Return login data
   getAuthData() {
+    console.log('returning auth data: ', _authData);
     return _authData;
   },
 
